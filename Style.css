@@ -1,0 +1,119 @@
+body {
+    background: url('./img/Body.jpg');
+    text-align: center;
+}
+.start {
+	position: relative;
+	position: absolute;
+	top:   0;
+	left:   5%;  
+	display: inline-block;
+	font-size: 24px;
+	font-weight: bold;
+	color: hsl(88, 70%, 30%);
+	text-shadow: rgba(255,255,255,.5) 0 -1px 0, rgba(0,0,0,.2) 0 .18em .15em;
+	text-decoration: none;
+	user-select: none;
+	margin: .5em;
+	padding: .5em .6em .4em .6em;
+	border-radius: 8px;
+	border-top: 1px solid rgba(255,255,255,.1);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	outline: none;
+	background: #a2cf70 radial-gradient(rgba(255,255,255,0), rgba(255,255,255,.5));
+	box-shadow:
+		inset rgba(255,255,255,.6) 0 .3em .3em,
+		inset rgba(0,0,0,.2) 0 -.1em .3em,
+		rgb(128,161,103) 0 7px 1px,
+		rgba(0,0,0,.2) 0 .5em 5px;
+	transition: background .2s ease-in-out;
+}
+.start:hover {
+	background-color: hsl(88, 70%, 75%);
+}
+.start:active {
+	top: .2em;
+	color: rgba(254,255,255,.9);
+	text-shadow: rgba(0,0,0,.2) 0 1px 2px;
+	box-shadow:
+		inset rgba(255,255,255,.6) 0 .3em .3em,
+		inset rgba(0,0,0,.2) 0 -.1em .3em,
+		rgba(0,0,0,.4) 0 .1em 1px,
+		rgba(0,0,0,.3) 0 .2em 6px;
+}
+.start:after {
+	content:  "";
+	position:  absolute; 
+	width:   90%;
+	height:  60%;
+	top:   0;
+	left:   5%;    
+	border-radius:    .5em .5em 1em 1em / .5em .5em 2em 2em;
+	background-image: linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.3)); 
+}
+.start:active:after {
+	opacity: .6;
+}
+#Board{
+    width: 520px;
+    height: 520px;
+	position: absolute;
+	top: 90px;
+	left: 300px;
+    margin: 0 auto;
+}
+#myCanvas{
+	position: absolute;
+	top: 90px;
+	left: 100px;
+}
+.WhiteCell, .BlackCell{
+    width: 61px;
+    height: 61px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+.WhiteCell{
+	border: 1px solid black;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+    background: url('./img/WhiteCell.jpg');
+}
+.BlackCell{
+	border: 1px solid black;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+    background: url('./img/BlackCell.jpg');
+}
+.Selected {
+	border: 1px solid lightblue;
+}
+.Backlight {
+    background-color: limegreen;
+    border: 1px solid lime;
+}
+.Kill {
+    background-color: yellow;
+    border: 1px solid yellow;
+}
+#Info {
+    text-align: center;
+    font-size: 30px;
+	color: white;
+    position: absolute;
+	top: 40px;
+	left: 500px;
+}
+#WarningInfo {
+    font-size: 12px;
+    color: black;
+}
