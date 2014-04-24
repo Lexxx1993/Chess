@@ -84,6 +84,12 @@ function AddShapes () {
     }
 }
 console.log("AddShapes");
+function Rotate() {    
+    $('#Board').animate({
+        transform: 'rotate(180deg)'
+    });  
+} 
+console.log("Rotate");
 function SelectShape (Cell) {
     $(Cell).addClass('Selected');
     selected = true;
@@ -172,7 +178,21 @@ function Move (Shape, Coordinate) {
     }
 } 
 console.log("Move");
-console.log("Здесь будет функция атаки фигур");
+function Attack (AttackedCell) {
+    if ($(AttackedCell).hasClass('Kill')) { 
+        var AttackedShape = $(AttackedCell).children(); 
+        var AttackedShapeColor = AttackedShape.attr('color');
+        $(AttackedCell).toggleClass('Kill').toggleClass('Backlight');
+            if (AttackedShapeColor == 'black') { 
+                $('#KilledShapes').append(AttackedShape); 
+            } else {
+                $('#KilledShapes').append(AttackedShape);
+                }
+            } else {
+                alert('Атака невозможна!');
+            }
+} 
+console.log("Attack");
 function Empty (Cell) {
     if ($(Cell).find('img').length == 0) return true;
     return false;
@@ -209,13 +229,13 @@ $(document).ready(function () {
             CancelShape(this); 
         }
         else if (selected && Empty(this)) {
-
             if (Move(SaveShape, this)) { 
                 $('.Backlight').toggleClass('Backlight');
                 WhiteMove = SwitchMoves(WhiteMove);
             }
         }
         else if (selected && !Empty(this)) {
+            Attack(this);
             if (Move(SaveShape,this)) {
                 $('.Backlight').toggleClass('Backlight');
                 WhiteMove = SwitchMoves(WhiteMove); 

@@ -5,7 +5,8 @@
     <title>Chess</title>
     <link rel = "stylesheet" type = "text/css" href = "Style.css">
 	<script src = "http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script type = "text/javascript" src = "jquery-1.8.2.min.js"></script>   
+    <script type = "text/javascript" src = "jquery-1.8.2.min.js"></script>
+    <script type = "text/javascript" src = "jquery.transform2d.js"></script>   
 </head>
 <body>
     <canvas id = "myCanvas"></canvas>
@@ -13,8 +14,10 @@
     <script type = "text/javascript" src = "bubbles.js"></script>
     <script type = "text/javascript" src = "animate.js"></script>
     <script type = "text/javascript" src = "Chess.js"></script>
-	<button class = "start" type = "button" onclick = "CreateBoard (8,8); AddShapes(); HideCanvas();">Start game</button>   
-	<div id = "Board"></div>  
+	<button class = "start" type = "button" onclick = "CreateBoard (8,8); AddShapes(); HideCanvas();">Start game</button> 
+    <button class = "rotate" type = "button" onclick = "Rotate();">Rotate board</button>   
+	<div id = "Board" class="Board"></div>
+    <div id = "KilledShapes"></div>  
     <div id = "Info"></div> 
 	<div id= "WarningInfo"></div>	
 </body>

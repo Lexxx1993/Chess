@@ -54,6 +54,39 @@ body {
 .start:active:after {
 	opacity: .6;
 }
+.rotate {
+    position: absolute;
+	top:   15%;
+	left:   4%;  
+    -moz-border-radius: 25px;
+    moz-box-shadow: #6E7849 0px 0px 10px;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-border-radius: 25px;
+    -webkit-box-shadow: #6E7849 0 0 10px;
+    -webkit-transition: all 0.5s ease;
+    background-color: #698edd;
+    background-image: -moz-linear-gradient(90deg, #74d657, #698edd);
+    background-image: -ms-linear-gradient(90deg, #74d657, #698edd);
+    background-image: -o-linear-gradient(90deg, #74d657, #698edd);
+    background-image: -webkit-linear-gradient(90deg, #74d657, #698edd);
+    background-image: linear-gradient(90deg, #74d657, #698edd);
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    box-shadow: #6E7849 0px 0px 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.9em;
+    margin: auto;
+    padding: 15px;
+    text-decoration: none;
+    text-shadow: #000000 5px 5px 15px;
+    transition: all 0.5s ease;
+}
+.rotate:hover {
+    padding: 15px;
+}
 #Board{
     width: 520px;
     height: 520px;
@@ -61,6 +94,14 @@ body {
 	top: 90px;
 	left: 300px;
     margin: 0 auto;
+}
+#KilledShapes{
+    width: 450px;
+    height: 200px;
+    margin: 0 auto;
+   	position: absolute;
+	top: 245px;
+	left: 810px;
 }
 #myCanvas{
 	position: absolute;
