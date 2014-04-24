@@ -158,6 +158,54 @@ function MovesLogic (x,y,type,color) {
             }
         }
     }
+        else if (type == 'Rook') {
+            for (var i = x; i < 9; i++) {
+                    var AvailableCell = PossibleMoves(i,y,1,0);
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+
+            }
+            for (var i = x; i > 0; i--) {
+                    var AvailableCell = PossibleMoves(i,y,-1,0);
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+
+            }
+            for (var j = y; j < 9; j++) {
+                    var AvailableCell = PossibleMoves(x,j,0,1)
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+            for (var j = y; j > 0; j--) {
+                    var AvailableCell = PossibleMoves(x,j,0,-1);
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+        }
 }
 console.log("MovesLogic");
 function InsertShape (x,y,Shape) {
