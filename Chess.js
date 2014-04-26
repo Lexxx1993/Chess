@@ -280,6 +280,144 @@ function MovesLogic (x,y,type,color) {
             }
         }
     }
+    else if (type == 'Bishop') {
+        for (var i = 1; i < 9; i++) {
+            var AvailableCell1 = PossibleMoves(x,y,i,i);
+            if (Empty(AvailableCell1)) {
+                AvailableCell1.toggleClass('Backlight');
+            } else  {
+                if ($(AvailableCell1).children().attr('color') != color) {
+                    AvailableCell1.toggleClass('Kill');
+                }
+                break;
+            }
+        }
+        for (var i = 1; i < 9; i++) {
+            var AvailableCell2 = PossibleMoves(x,y,i,-i);
+            if (Empty(AvailableCell2)) {
+                AvailableCell2.toggleClass('Backlight');
+            } else {
+                if ($(AvailableCell2).children().attr('color') != color) {
+                    AvailableCell2.toggleClass('Kill');
+                }
+                break;
+            }
+        }
+        for (var i = 1; i < 9; i++) {
+            var AvailableCell3 = PossibleMoves(x,y,-i,i)
+            if (Empty(AvailableCell3)) {
+                AvailableCell3.toggleClass('Backlight');
+            } else {
+                if ($(AvailableCell3).children().attr('color') != color) {
+                    AvailableCell3.toggleClass('Kill');
+                }
+                break;
+            }
+        }
+        for (var i = 1; i < 9; i++) {
+            var AvailableCell4 = PossibleMoves(x,y,-i,-i);
+            if (Empty(AvailableCell4)) {
+                AvailableCell4.toggleClass('Backlight');
+            } else {
+                if ($(AvailableCell4).children().attr('color') != color) {
+                    AvailableCell4.toggleClass('Kill');
+                }
+                break;
+            }
+        }
+    }
+    else if (type == 'Queen') {
+            for (var i = x; i < 9; i++) {
+                    var AvailableCell = PossibleMoves(i,y,1,0);
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+
+            }
+            for (var i = x; i > 0; i--) {
+                    var AvailableCell = PossibleMoves(i,y,-1,0);
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+
+            }
+            for (var j = y; j < 9; j++) {
+                    var AvailableCell = PossibleMoves(x,j,0,1)
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+            for (var j = y; j > 0; j--) {
+                    var AvailableCell = PossibleMoves(x,j,0,-1);
+                if (Empty(AvailableCell)) {
+                    AvailableCell.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell).children().attr('color') != color) {
+                        AvailableCell.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+            for (var i = 1; i < 9; i++) {
+                    var AvailableCell1 = PossibleMoves(x,y,i,i);
+                if (Empty(AvailableCell1)) {
+                    AvailableCell1.toggleClass('Backlight');
+                } else  {
+                    if ($(AvailableCell1).children().attr('color') != color) {
+                        AvailableCell1.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+            for (var i = 1; i < 9; i++) {
+                var AvailableCell2 = PossibleMoves(x,y,i,-i);
+                if (Empty(AvailableCell2)) {
+                    AvailableCell2.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell2).children().attr('color') != color) {
+                        AvailableCell2.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+            for (var i = 1; i < 9; i++) {
+                var AvailableCell3 = PossibleMoves(x,y,-i,i)
+                if (Empty(AvailableCell3)) {
+                    AvailableCell3.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell3).children().attr('color') != color) {
+                        AvailableCell3.toggleClass('Kill');
+                    }
+                    break;
+                }
+            }
+            for (var i = 1; i < 9; i++) {
+                var AvailableCell4 = PossibleMoves(x,y,-i,-i);
+                if (Empty(AvailableCell4)) {
+                    AvailableCell4.toggleClass('Backlight');
+                } else {
+                    if ($(AvailableCell4).children().attr('color') != color) {
+                    AvailableCell4.toggleClass('Kill');
+                    }
+                break;
+            }
+        }
+    }
 }
 console.log("MovesLogic");
 function InsertShape (x,y,Shape) {
