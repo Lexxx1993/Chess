@@ -418,6 +418,80 @@ function MovesLogic (x,y,type,color) {
             }
         }
     }
+    else if (type == 'King') {
+        var AvailableCell1 = PossibleMoves(x,y,1,1);
+        var AvailableCell2 = PossibleMoves(x,y,1,0);
+        var AvailableCell3 = PossibleMoves(x,y,1,-1);
+        var AvailableCell4 = PossibleMoves(x,y,0,-1);
+        var AvailableCell5 = PossibleMoves(x,y,-1,-1);
+        var AvailableCell6 = PossibleMoves(x,y,-1,0);
+        var AvailableCell7 = PossibleMoves(x,y,-1,1);
+        var AvailableCell8 = PossibleMoves(x,y,0,1);
+        if (Empty(AvailableCell1)) {
+            AvailableCell1.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell1).children().attr('color') != color) {
+                AvailableCell1.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell2)) {
+            AvailableCell2.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell2).children().attr('color') != color) {
+                AvailableCell2.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell3)) {
+            AvailableCell3.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell3).children().attr('color') != color) {
+                AvailableCell3.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell4)) {
+            AvailableCell4.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell4).children().attr('color') != color) {
+                AvailableCell4.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell5)) {
+            AvailableCell5.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell5).children().attr('color') != color) {
+                AvailableCell5.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell6)) {
+            AvailableCell6.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell6).children().attr('color') != color) {
+                AvailableCell6.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell7)) {
+            AvailableCell7.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell7).children().attr('color') != color) {
+                AvailableCell7.toggleClass('Kill');
+            }
+        }
+        if (Empty(AvailableCell8)) {
+            AvailableCell8.toggleClass('Backlight');
+        }
+        else  {
+            if ($(AvailableCell8).children().attr('color') != color) {
+                AvailableCell8.toggleClass('Kill');
+            }
+        }
+    }
 }
 console.log("MovesLogic");
 function InsertShape (x,y,Shape) {
